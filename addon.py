@@ -72,7 +72,7 @@ elif mode == "channels":
         raise Exception(r'list scrape fail: ' + variant)
 
     result = re.finditer(
-        b'''href=\"([^\"]*)\">\s*<div\s*class=\"cover\"\s*style=\"background:url\(([^\)]*)\)\s*no-repeat;''',
+        b'''href=\"([^\"]*)\">\s*<div\s*class=\"cover lazy\"\s*style=\"(?:[^\"]+)\"\s*data-lazy=\"([^\"]*)\"''',
         html[dataStartIndex : html.find(b'<footer')]
     )
 
